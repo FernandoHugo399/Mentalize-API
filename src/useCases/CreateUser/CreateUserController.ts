@@ -11,9 +11,9 @@ export class CreateUserController {
     public async handle (req: Request, res: Response): Promise<Response> {
       try {
         await this.createUserUseCase.execute(req.body)
-        return res.status(200).send('tudo certo aqui')
+        return res.status(200).send({ message: 'Usuário criado com sucesso!' })
       } catch (err) {
-        return res.status(200).send({ error: err.messsage })
+        return res.status(200).send({ error: err.message })
       }
     }
 }
