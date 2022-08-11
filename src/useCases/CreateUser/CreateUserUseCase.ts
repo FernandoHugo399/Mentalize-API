@@ -3,6 +3,7 @@ import { User } from './../../entities/User'
 import { UserRepository } from './../../repositores/implementations/UserRepository'
 import { ICreateUserDTO } from './CreateUserDTO'
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 export class CreateUserUseCase {
   private userRepository: UserRepository
@@ -40,6 +41,8 @@ export class CreateUserUseCase {
       subject: 'Olá ' + User.nome,
       body: '<p>Sua conta foi criado com sucesso!</p>'
     })
+
+    return jwt.sign({ id_usuario: User.id_usuario, email: User.email }, process.env.SECRET_JWT as string, { expiresIn: 0 })
   }
 
   private formatData (user: ICreateUserDTO) {
