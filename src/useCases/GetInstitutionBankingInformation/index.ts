@@ -1,0 +1,7 @@
+import { InstitutionBankingInformationRepository } from './../../repositores/implementations/InstitutionBankingInformationRepository'
+import { GetInstitutioBankingInformationUseCase } from './GetInstitutionBankingInformationUseCase'
+import { GetInstitutionBankingInformationController } from './GetInstitutionBankingInformationController'
+
+const institutionBankingInformationRepository = new InstitutionBankingInformationRepository()
+const getInstitutionBankingInformationUseCase = new GetInstitutioBankingInformationUseCase(institutionBankingInformationRepository)
+export const getInstitutionBankingInformationController = new GetInstitutionBankingInformationController(getInstitutionBankingInformationUseCase)
