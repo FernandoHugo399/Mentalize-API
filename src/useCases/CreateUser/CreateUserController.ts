@@ -10,8 +10,8 @@ export class CreateUserController {
 
     public async handle (req: Request, res: Response): Promise<Response> {
       try {
-        const request = await this.createUserUseCase.execute(req.body)
-        res.set('Authorization', request)
+        const response = await this.createUserUseCase.execute(req.body)
+        res.set('Authorization', response)
         return res.status(200).send({ message: 'Usuário criado com sucesso!' })
       } catch (err) {
         return res.status(200).send({ error: err.message })
