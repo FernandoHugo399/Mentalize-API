@@ -1,15 +1,15 @@
 # API Doe Mais
 
-## :mag: About: 
+## :mag: About:
+
 Structure of a typescript api, already configured with eslint
 <br>
 
-
-
 ## 👷 how to run it:
+
 ```bash
 # clone the repository
-git clone https://github.com/FernandoHugo399/API-Doe-Mais
+git clone https://github.com/FernandoHugo399/Mentalize-API
 
 # open an IDE of your choice
 
@@ -21,23 +21,9 @@ yarn
 yarn dev
 ```
 
-
 ## Routes:
+
 ```bash
-# All institutions
-Get: /institutions
-
-# One institution
-Get: /institution/:id
-
-# Information of institution
-Get: /institution-information/:id
-
-# All messages
-Get: /messages
-
-# Save message
-Post: /save-message
+# Create user
+Post: /create-user
 ```
-
-
