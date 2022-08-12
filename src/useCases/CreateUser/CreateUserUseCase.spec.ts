@@ -74,7 +74,7 @@ describe('Testing useCase CreateUser', () => {
       email: 'hugo@gmail.com',
       telefone: '81988457189',
       senha: '123123123',
-      nascimento: '23/08/2005'
+      nascimento: '2005/08/23'
     })
 
     expect(res.body).toHaveProperty('error', 'Este email de usuário já existe')
@@ -86,7 +86,7 @@ describe('Testing useCase CreateUser', () => {
       email: Math.floor(Date.now() * Math.random()).toString(36) + 'Testecomjest@gmail.com',
       telefone: '81988457189',
       senha: '123123123',
-      nascimento: '23/08/2000'
+      nascimento: '2000/08/23'
     })
 
     expect(res.body).toHaveProperty('message', 'Usuário criado com sucesso!')
