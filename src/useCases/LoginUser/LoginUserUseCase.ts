@@ -26,7 +26,7 @@ export class LoginUserUseCase {
         throw new Error('Email ou senha incorretos')
       }
 
-      return jwt.sign({ id_usuario: verifyUser.id_usuario, email: verifyUser.email }, process.env.SECRET_JWT as string, { expiresIn: 0 })
+      return jwt.sign({ id_usuario: verifyUser.id_usuario, email: verifyUser.email }, process.env.SECRET_JWT as string, { expiresIn: 1000 * 60 * 60 * 24 * 30 * 12 })
     }
 
     private formatData (user: ILoginUserDTO) {

@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import Verify from './middlewares/Verify'
 import { createUserController } from './useCases/CreateUser/index'
 import { loginUserControler } from './useCases/LoginUser'
 

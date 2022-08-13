@@ -42,7 +42,7 @@ export class CreateUserUseCase {
       body: '<p>Sua conta foi criado com sucesso!</p>'
     })
 
-    return jwt.sign({ id_usuario: User.id_usuario, email: User.email }, process.env.SECRET_JWT as string, { expiresIn: 0 })
+    return jwt.sign({ id_usuario: User.id_usuario, email: User.email }, process.env.SECRET_JWT as string, { expiresIn: 1000 * 60 * 60 * 24 * 30 * 12 })
   }
 
   private formatData (user: ICreateUserDTO) {
