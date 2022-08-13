@@ -5,7 +5,7 @@ import { db } from '../../database'
 export class UserRepository implements IUserRepository {
   public async findByEmail (email: string): Promise<User> {
     const User = await db.query(`
-      select id_usuario, nome, email, telefone, nascimento
+      select id_usuario, nome, email, telefone, nascimento, senha
       from usuario where email = $1
       `, [email])
     return User.rows[0]
